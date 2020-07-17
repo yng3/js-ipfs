@@ -96,7 +96,7 @@ const parseTimeout = (value) => {
  * @prop {number} [port]
  * @prop {string} [protocol]
  * @prop {Headers|Record<string, string>} [headers] - Request headers.
- * @prop {number|string} [timeout] - Amount of time until request should timeout in ms or humand readable. https://www.npmjs.com/package/parse-duration for valid string values.
+ * @prop {number|string} [timeout] - Amount of time until request should timeout in ms or human readable. https://www.npmjs.com/package/parse-duration for valid string values.
  * @prop {string} [apiPath] - Path to the API.
  * @prop {URL|string} [url] - Full API URL.
  */
@@ -110,7 +110,7 @@ class Client extends HTTP {
     /** @type {ClientOptions} */
     const opts = normalizeInput(options)
     super({
-      timeout: parseTimeout(opts.timeout) || 60000 * 20,
+      timeout: parseTimeout(opts.timeout),
       headers: opts.headers,
       base: normalizeInput(opts.url).toString(),
       handleError: errorHandler,
