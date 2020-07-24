@@ -11,7 +11,6 @@ module.exports = configure(api => {
     cids = Array.isArray(cids) ? cids : [cids]
 
     const res = await api.post('dht/provide', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: cids.map(cid => new CID(cid).toString()),

@@ -13,7 +13,6 @@ module.exports = configure((api, options) => {
     }
 
     const res = await api.post('refs', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: args.map(arg => `${Buffer.isBuffer(arg) ? new CID(arg) : arg}`),

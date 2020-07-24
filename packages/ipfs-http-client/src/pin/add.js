@@ -9,7 +9,6 @@ module.exports = configure(api => {
     paths = Array.isArray(paths) ? paths : [paths]
 
     const res = await (await api.post('pin/add', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: paths.map(path => `${path}`),

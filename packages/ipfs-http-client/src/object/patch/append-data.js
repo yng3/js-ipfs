@@ -15,7 +15,6 @@ module.exports = configure(api => {
     const signal = anySignal([controller.signal, options.signal])
 
     const res = await api.post('object/patch/append-data', {
-      timeout: options.timeout,
       signal,
       searchParams: toUrlSearchParams({
         arg: `${Buffer.isBuffer(cid) ? new CID(cid) : cid}`,

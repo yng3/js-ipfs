@@ -22,7 +22,6 @@ module.exports = configure((api) => {
         ...options,
         progress: Boolean(progressFn)
       }),
-      timeout: options.timeout,
       signal,
       ...(
         await multipartRequest(input, controller, options.headers)

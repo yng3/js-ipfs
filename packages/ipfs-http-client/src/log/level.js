@@ -7,7 +7,6 @@ const toUrlSearchParams = require('../lib/to-url-search-params')
 module.exports = configure(api => {
   return async (subsystem, level, options = {}) => {
     const res = await api.post('log/level', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: [

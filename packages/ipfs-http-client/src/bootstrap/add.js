@@ -12,7 +12,6 @@ module.exports = configure(api => {
     }
 
     const res = await api.post('bootstrap/add', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: addr,

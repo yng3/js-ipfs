@@ -8,7 +8,6 @@ module.exports = configure(api => {
     addrs = Array.isArray(addrs) ? addrs : [addrs]
 
     const res = await api.post('swarm/disconnect', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: addrs.map(addr => `${addr}`),

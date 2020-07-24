@@ -10,7 +10,6 @@ const multipartRequest = require('../lib/multipart-request')
 module.exports = configure(api => {
   return async function * put (key, value, options = {}) {
     const res = await api.post('dht/put', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: key,

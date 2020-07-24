@@ -9,7 +9,6 @@ module.exports = configure(api => {
     const { sources, options } = findSources(args)
 
     const res = await api.post('files/rm', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: sources,

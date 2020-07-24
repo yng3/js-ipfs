@@ -9,7 +9,6 @@ const { Provider } = require('./response-types')
 module.exports = configure(api => {
   return async function * findProvs (cid, options = {}) {
     const res = await api.post('dht/findprovs', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: `${new CID(cid)}`,

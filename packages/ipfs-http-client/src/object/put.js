@@ -52,7 +52,6 @@ module.exports = configure(api => {
     const signal = anySignal([controller.signal, options.signal])
 
     const res = await api.post('object/put', {
-      timeout: options.timeout,
       signal,
       searchParams: toUrlSearchParams(options),
       ...(

@@ -66,9 +66,16 @@ const errorHandler = async (response) => {
 
   let error = new HTTP.HTTPError(response)
 
-  // This is what go-ipfs returns where there's a timeout
-  if (msg && msg.includes('context deadline exceeded')) {
-    error = new HTTP.TimeoutError(response)
+  if (msg) {
+    // This is what rs-ipfs returns where there's a timeout
+    if (msg.includes('deadline has elapsed')) {
+      error = new HTTP.TimeoutError(response)
+    }
+
+    // This is what go-ipfs returns where there's a timeout
+    if (msg && msg.includes('context deadline exceeded')) {
+      error = new HTTP.TimeoutError(response)
+    }
   }
 
   // If we managed to extract a message from the response, use it

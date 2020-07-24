@@ -30,7 +30,6 @@ module.exports = configure((api, options) => {
 
     try {
       res = await api.post('pubsub/sub', {
-        timeout: options.timeout,
         signal: options.signal,
         searchParams: toUrlSearchParams({
           arg: topic,

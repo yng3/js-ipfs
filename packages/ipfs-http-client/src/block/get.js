@@ -11,7 +11,6 @@ module.exports = configure(api => {
     cid = new CID(cid)
 
     const res = await api.post('block/get', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: cid.toString(),

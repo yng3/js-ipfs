@@ -8,7 +8,6 @@ const { Value } = require('./response-types')
 module.exports = configure(api => {
   return async function get (key, options = {}) {
     const res = await api.post('dht/get', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: Buffer.isBuffer(key) ? key.toString() : key,

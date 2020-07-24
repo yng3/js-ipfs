@@ -9,7 +9,6 @@ module.exports = configure(api => {
     peerId = typeof peerId === 'string' ? peerId : new CID(peerId).toString()
 
     const res = await (await api.post('bitswap/wantlist', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         ...options,

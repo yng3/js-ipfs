@@ -15,7 +15,6 @@ module.exports = configure(api => {
     const signal = anySignal([controller.signal, options.signal])
 
     const { Hash } = await (await api.post('object/patch/set-data', {
-      timeout: options.timeout,
       signal,
       searchParams: toUrlSearchParams({
         arg: [

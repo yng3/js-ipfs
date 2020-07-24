@@ -11,7 +11,6 @@ module.exports = configure(api => {
     }
 
     const res = await api.post('files/flush', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: path,

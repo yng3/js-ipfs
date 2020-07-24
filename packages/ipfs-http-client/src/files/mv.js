@@ -10,7 +10,6 @@ module.exports = configure(api => {
     const { sources, options } = findSources(args)
 
     const res = await api.post('files/mv', {
-      timeout: options.timeout,
       signal: options.signal,
       searchParams: toUrlSearchParams({
         arg: sources.map(src => CID.isCID(src) ? `/ipfs/${src}` : src),
