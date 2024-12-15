@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "cids": "^1.1.6",
-    "ipfs-daemon": "^0.14.0",
-    "ipfs-core": "^0.16.0",
+    "ipfs-daemon": "^0.16.1",
+    "ipfs-core": "^0.18.1",
     "ipfs-http-client": "^50.1.2",
     "multicodec": "^3.0.1",
     "multihashing-async": "^2.1.2",
